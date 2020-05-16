@@ -9,7 +9,7 @@
     <context id="DB2Table" targetRuntime="Mybatis3">
         <!-- 数据库链接URL、用户名、密码 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://127.0.0.1:3306/jmoj-database"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/jmojdb"
                         userId="root"
                         password="123456">
         </jdbcConnection>
@@ -39,31 +39,7 @@
 
         <!-- 列出要生成代码的所有表: schema即为数据库名 tableName为对应的数据库表 domainObjectName是要生成的实体类 enable*ByExample
                    是否生成 example类   -->
-        <table tableName="User" domainObjectName="USERDO"
-               enableCountByExample="false"
-               enableUpdateByExample="false"
-               enableDeleteByExample="false"
-               enableSelectByExample="false"
-               selectByExampleQueryId="false"></table>
-        <table tableName="Test" domainObjectName="TESTDO"
-               enableCountByExample="false"
-               enableUpdateByExample="false"
-               enableDeleteByExample="false"
-               enableSelectByExample="false"
-               selectByExampleQueryId="false"></table>
-        <table tableName="Task" domainObjectName="TASKDO"
-               enableCountByExample="false"
-               enableUpdateByExample="false"
-               enableDeleteByExample="false"
-               enableSelectByExample="false"
-               selectByExampleQueryId="false"></table>
-        <table tableName="Task-result" domainObjectName="TASKRESULTDO"
-               enableCountByExample="false"
-               enableUpdateByExample="false"
-               enableDeleteByExample="false"
-               enableSelectByExample="false"
-               selectByExampleQueryId="false"></table>
-        <table tableName="Question" domainObjectName="QUESTIONDO"
+        <table tableName="student" domainObjectName="StudentDO"
                enableCountByExample="false"
                enableUpdateByExample="false"
                enableDeleteByExample="false"
