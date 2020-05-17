@@ -2,6 +2,7 @@ package com.jm.oj.service.impl;
 
 import com.jm.oj.dao.StudentDOMapper;
 import com.jm.oj.dataobject.StudentDO;
+import com.jm.oj.dataobject.StudentDOKey;
 import com.jm.oj.service.StudentService;
 import com.jm.oj.util.JWTUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,9 +16,9 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public String login(String email, String pwd) throws Exception {
         // 在数据表中查找用户是否存在
-        StudentDO studentDO = null;
+        StudentDO studentDO=null;
         try {
-            studentDO = studentDOMapper.selectByEmail(email);
+            studentDO= studentDOMapper.selectByEmail(email);
         } catch (Exception e) {
             throw new Exception("student doesn't exist");
         }
