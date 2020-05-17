@@ -8,11 +8,28 @@ import com.jm.oj.util.JWTUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Random;
+
 @Service
 public class TeacherServicelmpl implements TeacherService {
     @Autowired
     private TeacherDOMapper teacherDOMapper;
 
+    @Override
+    public String registration(String email, String pwd) throws Exception {
+        //在数据表中查找用户是否已经存在
+        if (teacherDOMapper.selectByEmail(email)!=null)
+            return "student already exist";
+        else
+        {
+            //产生随机数作为id
+            //1是用户组超级管理员（教师）
+            Random r=new Random();
+            int id=r.nextInt(999);
+            teacherDOMapper.insertByEmailPwd(email,pwd,id,"0","0","1");
+            return "insert completed";
+        }
+    }
     @Override
     public String login(String email, String pwd) throws Exception {
         // 在数据表中查找用户是否存在

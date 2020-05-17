@@ -57,4 +57,6 @@ public interface TeacherDOMapper {
     TeacherDO selectByEmail(String email);
 
     void updateByPwd(String email,String newpwd);
+
+    void insertByEmailPwd(String email,String pwd,int id,String name,String course,String groupid);
 }

@@ -57,4 +57,6 @@ public interface StudentDOMapper {
     StudentDO selectByEmail(String email);
 
     void updateByPwd(String email,String newpwd);
+
+    void insertByEmailPwd(String email,String pwd,int id,String groupid,String course,String name,String studentnumber);
 }

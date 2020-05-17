@@ -154,4 +154,14 @@
     set password=#{newpwd}
     where email = #{email}
   </update>
+  <insert id="insertByEmailPwd" >
+    insert into teacher(idTeacher,password,email,name,course,groupid)
+    values
+    (#{id,jdbcType=INTEGER},
+    #{pwd,jdbcType=VARCHAR},
+    #{email,jdbcType=VARCHAR},
+    #{name,jdbcType=VARCHAR},
+    #{course,jdbcType=VARCHAR},
+    #{groupid,jdbcType=VARCHAR})
+  </insert>
 </mapper>

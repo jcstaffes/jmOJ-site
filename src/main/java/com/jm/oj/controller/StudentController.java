@@ -14,6 +14,23 @@ public class StudentController {
     @Autowired
     StudentService studentService;
 
+    @GetMapping("/registration")
+    public BasicResponse registration(@RequestParam("email") String email, @RequestParam("pwd") String pwd) {
+        Object data = null;
+
+        try {
+            data = studentService.registration(email, pwd);
+            BasicResponse res = BasicResponse.create(data);
+
+            return res;
+        } catch (Exception e) {
+            data = e.getMessage();
+            BasicResponse res = BasicResponse.create(false, data);
+
+            return res;
+        }
+    }
+
     @GetMapping("/login")
     public BasicResponse login(@RequestParam("email") String email, @RequestParam("pwd") String pwd) {
         Object data = null;
