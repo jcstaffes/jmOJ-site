@@ -30,4 +30,21 @@ public class TeacherController {
             return res;
         }
     }
+
+    @GetMapping("/password-panel")
+    public BasicResponse panel(@RequestParam("email") String email, @RequestParam("pwd") String pwd,@RequestParam("new-pwd")String newpwd) {
+        Object data = null;
+
+        try {
+            data = teacherService.panel(email,pwd,newpwd);
+            BasicResponse res = BasicResponse.create(data);
+
+            return res;
+        } catch (Exception e) {
+            data = e.getMessage();
+            BasicResponse res = BasicResponse.create(false, data);
+
+            return res;
+        }
+    }
 }

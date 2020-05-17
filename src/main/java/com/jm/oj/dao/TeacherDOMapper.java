@@ -55,4 +55,6 @@ public interface TeacherDOMapper {
     int updateByPrimaryKey(TeacherDO record);
 
     TeacherDO selectByEmail(String email);
+
+    void updateByPwd(String email,String newpwd);
 }

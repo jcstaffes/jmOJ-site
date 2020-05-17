@@ -33,4 +33,25 @@ public class StudentServiceImpl implements StudentService {
         }
     }
 
+    @Override
+    public String panel(String email, String pwd,String newpwd) throws Exception {
+        // 在数据表中查找用户是否存在
+        StudentDO studentDO=null;
+        try {
+            studentDO= studentDOMapper.selectByEmail(email);
+        } catch (Exception e) {
+            throw new Exception("student doesn't exist");
+        }
+
+
+        // 密码是否正确
+        if (studentDO.getPassword().equals(pwd)) {
+            //密码正确更新密码
+            studentDOMapper.updateByPwd(email,newpwd);
+            return "update completed";
+        } else {
+            throw new Exception("wrong password");
+        }
+    }
+
 }

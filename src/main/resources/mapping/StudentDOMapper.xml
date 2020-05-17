@@ -171,4 +171,9 @@
     from student
     where email = #{email}
   </select>
+  <update id="updateByPwd" parameterType="java.lang.String" >
+    update student
+    set password=#{newpwd}
+    where email = #{email}
+  </update>
 </mapper>
