@@ -1,4 +1,4 @@
-package com.jm.oj.jmoj;
+package com.jm.oj;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

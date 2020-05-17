@@ -16,7 +16,7 @@
 
 
         <!-- 生成DataObject类存放位置-->
-        <javaModelGenerator targetPackage="com.jm.oj.jmoj.dataobject"
+        <javaModelGenerator targetPackage="com.jm.oj.dataobject"
                             targetProject="./src/main/java">
             <!-- 是否在当前路径下新加一层schema -->
             <property name="enableSubPackages" value="true" />
@@ -32,7 +32,7 @@
 
         <!-- 生成Dao类存放位置，对应的Mapper接口类文件 -->
         <javaClientGenerator type="XMLMAPPER"
-                             targetPackage="com.jm.oj.jmoj.dao" targetProject="./src/main/java">
+                             targetPackage="com.jm.oj.dao" targetProject="./src/main/java">
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>
 

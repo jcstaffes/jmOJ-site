@@ -1,4 +1,4 @@
-package com.jm.oj.jmoj.util;
+package com.jm.oj.util;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
@@ -13,7 +13,7 @@ public class JWTUtil {
 
     /**
      * 生成jwt token
-     * @param email 唯一标识符，用学生或老师的学号
+     * @param email 唯一标识符，用学生或老师的邮箱
      * @param pwd 用来签名的secret，用户的密码
      * @return jwt token
      */

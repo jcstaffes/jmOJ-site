@@ -1,4 +1,4 @@
-package com.jm.oj.jmoj;
+package com.jm.oj;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package com.jm.oj.jmoj.util;
+package com.jm.oj.util;
 
 
 public class BasicResponse {
@@ -21,14 +21,14 @@ public class BasicResponse {
         return data;
     }
 
-    public static com.jm.oj.jmoj.util.BasicResponse create(Boolean success, Object data) {
-        com.jm.oj.jmoj.util.BasicResponse res = new com.jm.oj.jmoj.util.BasicResponse();
+    public static BasicResponse create(Boolean success, Object data) {
+        BasicResponse res = new BasicResponse();
         res.setSuccess(success);
         res.setData(data);
         return res;
     }
 
-    public static com.jm.oj.jmoj.util.BasicResponse create(Object data) {
-        return com.jm.oj.jmoj.util.BasicResponse.create(true, data);
+    public static BasicResponse create(Object data) {
+        return BasicResponse.create(true, data);
     }
 }

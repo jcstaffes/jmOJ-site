@@ -1,4 +1,4 @@
-package com.jm.oj.jmoj.service;
+package com.jm.oj.service;
 
 public interface TeacherService {
     String login(String email, String pwd) throws Exception;

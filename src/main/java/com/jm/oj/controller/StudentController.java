@@ -1,7 +1,7 @@
-package com.jm.oj.jmoj.controller;
+package com.jm.oj.controller;
 
-import com.jm.oj.jmoj.service.StudentService;
-import com.jm.oj.jmoj.util.BasicResponse;
+import com.jm.oj.service.StudentService;
+import com.jm.oj.util.BasicResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
