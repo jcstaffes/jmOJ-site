@@ -1,5 +1,7 @@
 package com.jm.oj.service.impl;
 
+import com.jm.oj.dao.QuestionDOMapper;
+import com.jm.oj.dataobject.QuestionDO;
 import com.jm.oj.dataobject.StudentDO;
 import com.jm.oj.dataobject.TeacherDO;
 import com.jm.oj.dao.TeacherDOMapper;
@@ -14,6 +16,7 @@ import java.util.Random;
 public class TeacherServicelmpl implements TeacherService {
     @Autowired
     private TeacherDOMapper teacherDOMapper;
+    private QuestionDOMapper questionDOMapper;
 
     @Override
     public String registration(String email, String pwd) throws Exception {
@@ -68,5 +71,31 @@ public class TeacherServicelmpl implements TeacherService {
         } else {
             throw new Exception("wrong password");
         }
+    }
+
+    @Override
+    public String uploadproblems(int id,String questionname, String content) throws Exception {
+        //在数据表中查找题目是否已经存在
+        questionDOMapper.insertQuestion(id,questionname,content);
+        return "insert completed";
+
+    }
+
+    @Override
+    public String updateproblems(int id, String content) throws Exception {
+        QuestionDO questionDO=null;
+        try {
+            questionDO = questionDOMapper.selectById(id);
+        } catch (Exception e) {
+            throw new Exception("question doesn't exist");
+        }
+
+        try{
+            questionDOMapper.updateQuestion(id,content);
+            return "insert completed";
+        }catch (Exception e){
+            throw new Exception("error");
+        }
+
     }
 }

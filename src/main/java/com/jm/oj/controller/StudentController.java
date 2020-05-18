@@ -3,10 +3,7 @@ package com.jm.oj.controller;
 import com.jm.oj.service.StudentService;
 import com.jm.oj.util.BasicResponse;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/student")
@@ -14,7 +11,7 @@ public class StudentController {
     @Autowired
     StudentService studentService;
 
-    @GetMapping("/registration")
+    @PostMapping("/registration")
     public BasicResponse registration(@RequestParam("email") String email, @RequestParam("pwd") String pwd) {
         Object data = null;
 
@@ -48,7 +45,7 @@ public class StudentController {
         }
     }
 
-    @GetMapping("/password-panel")
+    @PostMapping("/password-panel")
     public BasicResponse panel(@RequestParam("email") String email, @RequestParam("pwd") String pwd,@RequestParam("new-pwd")String newpwd) {
         Object data = null;
 

@@ -2,7 +2,6 @@ package com.jm.oj.service.impl;
 
 import com.jm.oj.dao.StudentDOMapper;
 import com.jm.oj.dataobject.StudentDO;
-import com.jm.oj.dataobject.StudentDOKey;
 import com.jm.oj.service.StudentService;
 import com.jm.oj.util.JWTUtil;
 import org.springframework.beans.factory.annotation.Autowired;
