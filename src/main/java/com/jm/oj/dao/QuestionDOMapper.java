@@ -56,4 +56,5 @@ public interface QuestionDOMapper {
     QuestionDO selectById(int id);
     void insertQuestion(int id,String questionname,String content);
     void updateQuestion(int id,String content);
+    void deleteQuestion(int id);
 }

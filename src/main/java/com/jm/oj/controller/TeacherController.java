@@ -94,4 +94,38 @@ public class TeacherController {
             return res;
         }
     }
+
+    @DeleteMapping("/deletequestions")
+    public BasicResponse deletequestion(@RequestParam("id")int id){
+        Object data=null;
+
+        try{
+            data=teacherService.deleteproblems(id);
+            BasicResponse res = BasicResponse.create(data);
+
+            return res;
+        }catch (Exception e) {
+            data = e.getMessage();
+            BasicResponse res = BasicResponse.create(false, data);
+
+            return res;
+        }
+    }
+
+    @GetMapping("/searchquestions")
+    public BasicResponse searchquestion(@RequestParam("id")int id){
+        Object data=null;
+
+        try{
+            data=teacherService.searchproblems(id);
+            BasicResponse res = BasicResponse.create(data);
+
+            return res;
+        }catch (Exception e) {
+            data = e.getMessage();
+            BasicResponse res = BasicResponse.create(false, data);
+
+            return res;
+        }
+    }
 }

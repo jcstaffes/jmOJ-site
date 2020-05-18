@@ -16,6 +16,7 @@ import java.util.Random;
 public class TeacherServicelmpl implements TeacherService {
     @Autowired
     private TeacherDOMapper teacherDOMapper;
+    @Autowired
     private QuestionDOMapper questionDOMapper;
 
     @Override
@@ -97,5 +98,31 @@ public class TeacherServicelmpl implements TeacherService {
             throw new Exception("error");
         }
 
+    }
+
+    @Override
+    public String deleteproblems(int id) throws Exception {
+        QuestionDO questionDO=null;
+        try {
+            questionDO = questionDOMapper.selectById(id);
+        } catch (Exception e) {
+            throw new Exception("question doesn't exist");
+        }
+
+        questionDOMapper.deleteQuestion(id);
+        return "delete completed";
+    }
+
+    @Override
+    public String searchproblems(int id) throws Exception {
+        QuestionDO questionDO=null;
+        try {
+            questionDO = questionDOMapper.selectById(id);
+        } catch (Exception e) {
+            throw new Exception("question doesn't exist");
+        }
+
+        String str="id:"+questionDO.getIdquestion()+" name:"+questionDO.getQuestionname()+" content:"+questionDO.getContent()+" group:"+questionDO.getQuestiongroup()+" difficulty:"+questionDO.getDifficulty();
+        return str;
     }
 }

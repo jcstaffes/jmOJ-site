@@ -145,4 +145,8 @@
     set content=#{content}
     where idquestion = #{id}
   </update>
+  <delete id="deleteQuestion">
+    delete from question
+    where idquestion=#{id}
+  </delete>
 </mapper>
