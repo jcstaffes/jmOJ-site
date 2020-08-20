@@ -52,9 +52,8 @@ public interface QuestionDOMapper {
      * @mbg.generated Mon May 18 08:43:02 AEST 2020
      */
     int updateByPrimaryKey(QuestionDO record);
-
-    QuestionDO selectById(int id);
-    void insertQuestion(int id,String questionname,String content);
+    QuestionDO selectById(int idquestion);
+    void insertQuestion(int id,String questionname,String content,String testcase);
     void updateQuestion(int id,String content);
     void deleteQuestion(int id);
 }

@@ -75,9 +75,9 @@ public class TeacherServicelmpl implements TeacherService {
     }
 
     @Override
-    public String uploadproblems(int id,String questionname, String content) throws Exception {
+    public String uploadproblems(int id,String questionname, String content,String testcase) throws Exception {
         //在数据表中查找题目是否已经存在
-        questionDOMapper.insertQuestion(id,questionname,content);
+        questionDOMapper.insertQuestion(id,questionname,content,testcase);
         return "insert completed";
 
     }
@@ -122,7 +122,7 @@ public class TeacherServicelmpl implements TeacherService {
             throw new Exception("question doesn't exist");
         }
 
-        String str="id:"+questionDO.getIdquestion()+" name:"+questionDO.getQuestionname()+" content:"+questionDO.getContent()+" group:"+questionDO.getQuestiongroup()+" difficulty:"+questionDO.getDifficulty();
+        String str="id:"+questionDO.getIdquestion()+" name:"+questionDO.getQuestionname()+" content:"+questionDO.getContent()+" testcase:"+questionDO.getTestcase();
         return str;
     }
 }

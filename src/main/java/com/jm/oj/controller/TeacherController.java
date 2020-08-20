@@ -62,11 +62,11 @@ public class TeacherController {
         }
     }
     @PostMapping("/uploadquestions")
-    public BasicResponse uploadquestion(@RequestParam("id")int id,@RequestParam("name") String questionname,@RequestParam("content")String content){
+    public BasicResponse uploadquestion(@RequestParam("id")int id,@RequestParam("name") String questionname,@RequestParam("content")String content,@RequestParam("testcase")String testcase){
         Object data=null;
 
         try{
-            data=teacherService.uploadproblems(id,questionname,content);
+            data=teacherService.uploadproblems(id,questionname,content,testcase);
             BasicResponse res = BasicResponse.create(data);
 
             return res;

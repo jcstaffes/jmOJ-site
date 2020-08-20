@@ -1,6 +1,8 @@
 package com.jm.oj.service.impl;
 
+import com.jm.oj.dao.QuestionDOMapper;
 import com.jm.oj.dao.StudentDOMapper;
+import com.jm.oj.dataobject.QuestionDO;
 import com.jm.oj.dataobject.StudentDO;
 import com.jm.oj.service.StudentService;
 import com.jm.oj.util.JWTUtil;
@@ -13,6 +15,9 @@ import java.util.Random;
 public class StudentServiceImpl implements StudentService {
     @Autowired
     private StudentDOMapper studentDOMapper;
+
+    @Autowired
+    private QuestionDOMapper questionDOMapper;
 
     @Override
     public String registration(String email, String pwd) throws Exception {
@@ -71,4 +76,15 @@ public class StudentServiceImpl implements StudentService {
         }
     }
 
+    @Override
+    public String getquestion(int questionid, String questionname) throws Exception {
+        QuestionDO questionDO=null;
+        try {
+            questionDO=questionDOMapper.selectById(questionid);
+        }catch (Exception e) {
+            throw new Exception("question doesn't exist");
+        }
+        String str="id:"+questionDO.getIdquestion()+" name:"+questionDO.getQuestionname()+" content:"+questionDO.getContent()+" group:"+questionDO.getQuestiongroup()+" difficulty:"+questionDO.getDifficulty();
+        return str;
+    }
 }

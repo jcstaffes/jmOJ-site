@@ -61,4 +61,21 @@ public class StudentController {
             return res;
         }
     }
+
+    @GetMapping("/questions")
+    public BasicResponse getquestions(@RequestParam("questionid") int idquestion, @RequestParam("questionname") String questionname) {
+        Object data = null;
+
+        try {
+            data = studentService.getquestion(idquestion,questionname);
+            BasicResponse res = BasicResponse.create(data);
+
+            return res;
+        } catch (Exception e) {
+            data = e.getMessage();
+            BasicResponse res = BasicResponse.create(false, data);
+
+            return res;
+        }
+    }
 }
