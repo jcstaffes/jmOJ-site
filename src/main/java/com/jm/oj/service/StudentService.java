@@ -5,4 +5,5 @@ public interface StudentService {
     String panel(String email,String pwd,String newpwd)throws Exception;
     String registration(String email, String pwd) throws Exception;
     String getquestion(int questionid,String questionname) throws Exception;
+    String getgrade(String email)throws Exception;
 }

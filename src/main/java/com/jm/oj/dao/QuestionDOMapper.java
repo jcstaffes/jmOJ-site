@@ -56,4 +56,6 @@ public interface QuestionDOMapper {
     void insertQuestion(int id,String questionname,String content,String testcase);
     void updateQuestion(int id,String content);
     void deleteQuestion(int id);
+    String searchanswer(int id);
+    String testcase(int id);
 }

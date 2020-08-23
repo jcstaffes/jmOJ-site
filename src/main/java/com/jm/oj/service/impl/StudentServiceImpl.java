@@ -30,7 +30,7 @@ public class StudentServiceImpl implements StudentService {
             //2是用户组普通用户（学生）
             Random r=new Random();
             int id=r.nextInt(999);
-            studentDOMapper.insertByEmailPwd(email,pwd,id,"2","0","0","0");
+            studentDOMapper.insertByEmailPwd(email,pwd,id,"2","0","0","0",0);
             return "insert completed";
         }
     }
@@ -85,6 +85,18 @@ public class StudentServiceImpl implements StudentService {
             throw new Exception("question doesn't exist");
         }
         String str="id:"+questionDO.getIdquestion()+" name:"+questionDO.getQuestionname()+" content:"+questionDO.getContent()+" group:"+questionDO.getQuestiongroup()+" difficulty:"+questionDO.getDifficulty();
+        return str;
+    }
+
+    @Override
+    public String getgrade(String email) throws Exception {
+        StudentDO studentDO=null;
+        try {
+            studentDO=studentDOMapper.selectByEmail(email);
+        }catch (Exception e){
+            throw new Exception("student doesn't exist");
+        }
+        String str=String.valueOf(studentDO.getGrade());
         return str;
     }
 }

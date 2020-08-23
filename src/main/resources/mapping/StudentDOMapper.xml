@@ -177,7 +177,7 @@
     where email = #{email}
   </update>
   <insert id="insertByEmailPwd">
-    insert into student(idStudent,name,email,password,course,studentnumber,groupid)
+    insert into student(idStudent,name,email,password,course,studentnumber,groupid,grade)
     values
     (#{id,jdbcType=INTEGER},
     #{name,jdbcType=VARCHAR},
@@ -185,6 +185,12 @@
     #{pwd,jdbcType=VARCHAR},
     #{course,jdbcType=VARCHAR},
     #{studentnumber,jdbcType=VARCHAR},
-    #{groupid,jdbcType=VARCHAR})
+    #{groupid,jdbcType=VARCHAR},
+    #{grade,jdbcType=INTEGER})
   </insert>
+  <update id="updategrade">
+    update student
+    set grade = #{grade}
+    where email = #{email}
+  </update>
 </mapper>

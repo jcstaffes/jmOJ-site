@@ -161,10 +161,12 @@
     where idsub = #{idsub}
   </select>
   <insert id="insertSubid">
-    insert into submission (idsub, problemid,if_compile,if_pass,time_used,memory_used,email)
-    values (#{idsub,jdbcType=VARCHAR}, #{pid,jdbcType=INTEGER},if_compile = #{ifCompile,jdbcType=INTEGER},
-      if_pass = #{ifPass,jdbcType=INTEGER},time_used = #{timeUsed,jdbcType=INTEGER},
-      memory_used = #{memoryUsed,jdbcType=INTEGER},email = #{email,jdbcType=VARCHAR})
+    insert into submission (idsub, email, problemid,
+      if_compile, if_pass, time_used,
+      memory_used)
+    values (#{idsub,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{problemid,jdbcType=INTEGER},
+      #{ifCompile,jdbcType=INTEGER}, #{ifPass,jdbcType=INTEGER}, #{timeUsed,jdbcType=INTEGER},
+      #{memoryUsed,jdbcType=INTEGER})
   </insert>
   <update id="updateifcompile">
     update submission

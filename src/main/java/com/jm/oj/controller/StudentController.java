@@ -78,4 +78,21 @@ public class StudentController {
             return res;
         }
     }
+
+    @GetMapping("/getgrade")
+    public BasicResponse getgrade(@RequestParam("email") String email) {
+        Object data = null;
+
+        try {
+            data = studentService.getgrade(email);
+            BasicResponse res = BasicResponse.create(data);
+
+            return res;
+        } catch (Exception e) {
+            data = e.getMessage();
+            BasicResponse res = BasicResponse.create(false, data);
+
+            return res;
+        }
+    }
 }

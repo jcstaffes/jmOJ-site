@@ -173,4 +173,14 @@
     delete from question
     where idquestion=#{id}
   </delete>
+  <select id="searchanswer" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select answer
+    from question
+    where idquestion = #{id}
+  </select>
+  <select id="testcase" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select testcase
+    from question
+    where idquestion = #{id}
+  </select>
 </mapper>

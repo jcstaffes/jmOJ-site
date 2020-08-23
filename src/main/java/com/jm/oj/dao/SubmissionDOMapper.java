@@ -55,7 +55,7 @@ public interface SubmissionDOMapper {
 
     SubmissionDO selectbySID(String idsub);
 
-    void insertSubid(String idsub,int pid,int ifCompile,int ifPass,int timeUsed,int memoryUsed,String email);
+    void insertSubid(String idsub,int problemid,int ifCompile,int ifPass,int timeUsed,int memoryUsed,String email);
 
     void updateifcompile(int ifCompile,String idsub);
 
@@ -64,4 +64,5 @@ public interface SubmissionDOMapper {
     void updatetime(int timeUsed,String idsub);
 
     void updatememory(int memoryUsed,String idsub);
+
 }

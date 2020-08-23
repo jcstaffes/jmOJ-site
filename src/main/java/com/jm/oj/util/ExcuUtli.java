@@ -35,9 +35,9 @@ public class ExcuUtli {
         pr.destroy();
         System.out.println("output:"+sb.toString());
         String[] output=new String[3];
-        output[0]=sb.toString();
-        output[1]=String.valueOf(endTime - startTime);
-        output[2]=String.valueOf((startMem- endMem)/1024);
+        output[0]=sb.toString();//输出
+        output[1]=String.valueOf(endTime - startTime);//消耗时间
+        output[2]=String.valueOf((startMem- endMem)/1024);//消耗内存
         return output;//输出获取的数据
     }
 }
