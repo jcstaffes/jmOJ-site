@@ -1,11 +1,4 @@
 FROM openjdk:latest
-
-RUN mkdir/app
-
-ADD src/main/java ./app/
-
-WORKDIR /app
-
-ENV MYSQL_ROOT_PASSWORD 123456
-
-CMD ["/app/main"]
+ARG JAR_FILE=target/*.jar
+COPY ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
