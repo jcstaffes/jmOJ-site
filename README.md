@@ -30,3 +30,15 @@ proxy_pass http://judge;
 } 
 
 }
+# jmeter测试
+200用户在120秒内循环3次请求获取分数（分数查询）
+
+nginx负载均衡4个docker容器（轮询）：
+
+|  Throughput   | Average  | Median | Min |
+|  ----  | ----  | ----  | ---- |
+| 5.0/sec  | 637 | 337 | 296 |
+
+单一服务器：
+
+
