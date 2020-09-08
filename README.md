@@ -37,11 +37,11 @@ nginx负载均衡4个docker容器（轮询）：
 
 |  Throughput   | Average  | Median | Min |
 |  ----  | ----  | ----  | ---- |
-| 5.0/sec  | 637 | 337 | 296 |
+| 5.0/sec  | 596 | 323 | 295 |
 
 单一服务器：
 
 |  Throughput   | Average  | Median | Min |
 |  ----  | ----  | ----  | ---- |
-| 5.0/sec  | 596 | 323 | 295 |
+| 5.0/sec  | 637 | 337 | 296 |
 
